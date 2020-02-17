@@ -32,10 +32,14 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 
+api_urls = [
+    path('', include('django_my_app_demo_rest.urls')),
+]
+
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('', include('django_my_app_demo_rest.urls')),
+    path('api/', include(api_urls)),
 ]
