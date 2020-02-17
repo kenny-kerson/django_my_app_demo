@@ -26,16 +26,20 @@ Including another URLconf
 
 from django.urls import include, path
 from rest_framework import routers
-from django_my_app_demo_rest import views
+from django_my_app_demo_rest.views import auth_views
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+router.register(r'users', auth_views.UserViewSet)
+router.register(r'groups', auth_views.GroupViewSet)
+
+api_urls = [
+    path('', include('django_my_app_demo_rest.urls')),
+]
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('', include('django_my_app_demo_rest.urls')),
+    path('api/', include(api_urls)),
 ]

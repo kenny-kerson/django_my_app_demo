@@ -2,17 +2,6 @@ from django.db import models
 from pygments.lexers import get_all_lexers
 from pygments.styles import get_all_styles
 
-class Account(models.Model):
-    account_no = models.CharField(max_length=255, primary_key=True, default=" ")
-    account_status = models.CharField(max_length=255)
-    user_id = models.CharField(max_length=32)
-
-class Customer(models.Model):
-    cstno = models.CharField(max_length=16, primary_key=True, default=" ")
-    cust_kor_nm = models.CharField(max_length=50)
-
-
-
 LEXERS = [item for item in get_all_lexers() if item[1]]
 LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted([(item, item) for item in get_all_styles()])
@@ -28,3 +17,4 @@ class Snippet(models.Model):
 
     class Meta:
         ordering = ['created']
+        db_table = "snippet"
