@@ -1,8 +1,8 @@
 # Django My App Demo 프로젝트
 ## 브랜치
-- master : 최신소스
-- 01.init : 최초 프로젝트 생성상태
-- 0x.xxxx : 소스코드 개발에 따른 중간상태
+- `master` : 최신소스
+- `01.init` : 최초 프로젝트 생성상태
+- `0x.xxxx` : 소스코드 개발에 따른 중간상태 
 ## Language
 - Python 3.7.5
 ## Framework
