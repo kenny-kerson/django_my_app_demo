@@ -12,11 +12,11 @@
 ## WSGI
 - uWSGI
 ## DBMS
-- Postgresql
+- PostgreSQL
 ## NoSQL
-- Redis 혹은 Memcached
+- Redis
 ## 형상관리
-- Git, Github
+- Git / Github
 ## 로컬환경
 - Docker -> Linux( Ubuntu 16.04 ), nginx, Postgresql, ...
 ## 배포환경
