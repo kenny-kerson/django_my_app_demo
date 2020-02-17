@@ -6,7 +6,6 @@ from django_my_app_demo_rest.serializers.model_serializers import GroupSerialize
 from django_my_app_demo_rest.serializers.model_serializers import UserSerializer
 
 
-
 # def index(request):
 #     context = {
 #         'days': [1,2,3],
@@ -20,6 +19,7 @@ class UserViewSet(viewsets.ModelViewSet):
     API endpoint that allows users to be viewed or edited.
     """
     queryset = User.objects.all().order_by('-date_joined')
+    print(queryset.query)
     serializer_class = UserSerializer
 
 
@@ -28,6 +28,5 @@ class GroupViewSet(viewsets.ModelViewSet):
     API endpoint that allows groups to be viewed or edited.
     """
     queryset = Group.objects.all()
+    print(queryset.query)
     serializer_class = GroupSerializer
-
-

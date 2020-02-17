@@ -11,6 +11,7 @@ def snippet_list(request):
     """
     if request.method == 'GET':
         snippets = Snippet.objects.all()
+        print(snippets.query)
         serializer = SnippetSerializer(snippets, many=True)
         return JsonResponse(serializer.data, safe=False)
 
@@ -29,6 +30,7 @@ def snippet_detail(request, pk):
     """
     try:
         snippet = Snippet.objects.get(pk=pk)
+        print(snippet.query)
     except Snippet.DoesNotExist:
         return HttpResponse(status=404)
 
