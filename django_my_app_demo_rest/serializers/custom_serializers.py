@@ -3,6 +3,7 @@ from django_my_app_demo_rest.models.snippet_models import LANGUAGE_CHOICES
 from django_my_app_demo_rest.models.snippet_models import STYLE_CHOICES
 from django_my_app_demo_rest.models.snippet_models import Snippet
 
+
 # OurSerializer
 class SnippetSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
@@ -29,3 +30,17 @@ class SnippetSerializer(serializers.Serializer):
         instance.style = validated_data.get('style', instance.style)
         instance.save()
         return instance
+
+
+# OurSerializer
+class AccountSerializer(serializers.Serializer):
+    account_no = serializers.CharField()
+    account_status = serializers.CharField()
+    cstno = serializers.CharField()
+    cust_kor_nm = serializers.CharField()
+
+
+# OurSerializer
+class CustomCustomerSerializer(serializers.Serializer):
+    cstno = serializers.CharField()
+    cust_kor_nm = serializers.CharField()
