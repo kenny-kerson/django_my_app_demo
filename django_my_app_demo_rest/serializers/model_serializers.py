@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 
-from django_my_app_demo_rest.models import Customer, LANGUAGE_CHOICES, STYLE_CHOICES, Snippet
-
+from django_my_app_demo_rest.models.customer_models import Customer
+from django_my_app_demo_rest.models.account_models import Account
 
 # ModelSerializer
 class UserSerializer(serializers.HyperlinkedModelSerializer):

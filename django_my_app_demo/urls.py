@@ -26,11 +26,11 @@ Including another URLconf
 
 from django.urls import include, path
 from rest_framework import routers
-from django_my_app_demo_rest import views
+from django_my_app_demo_rest.views import auth_views
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+router.register(r'users', auth_views.UserViewSet)
+router.register(r'groups', auth_views.GroupViewSet)
 
 api_urls = [
     path('', include('django_my_app_demo_rest.urls')),

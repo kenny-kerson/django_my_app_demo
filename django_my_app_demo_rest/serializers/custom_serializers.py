@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from django_my_app_demo_rest.models import LANGUAGE_CHOICES
-from django_my_app_demo_rest.models import STYLE_CHOICES
-from django_my_app_demo_rest.models import Snippet
+from django_my_app_demo_rest.models.snippet_models import LANGUAGE_CHOICES
+from django_my_app_demo_rest.models.snippet_models import STYLE_CHOICES
+from django_my_app_demo_rest.models.snippet_models import Snippet
 
 # OurSerializer
 class SnippetSerializer(serializers.Serializer):

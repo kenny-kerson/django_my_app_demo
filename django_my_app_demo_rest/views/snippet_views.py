@@ -1,7 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
-from django_my_app_demo_rest.models import Snippet
+from django_my_app_demo_rest.models.snippet_models import Snippet
 from django_my_app_demo_rest.serializers.custom_serializers import SnippetSerializer
 
 @csrf_exempt
